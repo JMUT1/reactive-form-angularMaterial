@@ -33,3 +33,19 @@
     {{ fresh }}
   </mat-radio-button>
 </mat-radio-group>
+
+<mat-form-field appearance="outline">
+  <mat-label>Price</mat-label>
+  <input matInput type="number" placeholder="number" />
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+  <mat-label>Comment</mat-label>
+  <textarea matInput name="" id="" cols="5" rows="5"></textarea>
+</mat-form-field>
+<div>
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button mat-raised-button color="primary">Save</button>
+  </div>
+</div>
