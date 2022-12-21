@@ -8,13 +8,17 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { HeaderComponent } from './components/header/header.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './components/dialog/dialog.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +27,8 @@ import { HeaderComponent } from './components/header/header.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatDialogModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
