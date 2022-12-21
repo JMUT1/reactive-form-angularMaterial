@@ -14,6 +14,7 @@ export class DialogComponent implements OnInit {
   freshnessList  = ["Brand New", "Second Hand", "Refurnished"]
   productCategory = ["Fruits", "Vegtables", "Electornics"]
   productForm !: FormGroup
+  actionBtn = 'Save'
 
   constructor(private formBuilder : FormBuilder, private api : ApiService,
     @Inject(MAT_DIALOG_DATA) public editData: FormUser,
@@ -29,7 +30,9 @@ export class DialogComponent implements OnInit {
       date: ["", Validators.required]
     })
 
+    // WITH THIS IF THE  MAT DIALOG DATA IS GETTING THE INFO WHEN CLICKING THE EDIT BUTTON, CUZ IS TRIGGERING THE OPEN DIALOG METOD
     if(this.editData){
+      this.actionBtn = "Update"
       this.productForm.controls["productName"].setValue(this.editData.productName)
       this.productForm.controls["category"].setValue(this.editData.category)
       this.productForm.controls["freshness"].setValue(this.editData.freshness)
