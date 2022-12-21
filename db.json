@@ -1,5 +1,15 @@
 {
-  "productList": [],
+  "productList": [
+    {
+      "productName": "Chema",
+      "category": "Electornics",
+      "freshness": "Brand New",
+      "price": 25.44,
+      "comment": "NEW!!!",
+      "date": "2022-12-21T06:00:00.000Z",
+      "id": 1
+    }
+  ],
   "comments": [
     {
       "id": 1,
