@@ -13,10 +13,10 @@ export class TableInfoComponent implements OnInit {
 
   constructor(private apiTable: ApiService) { }
 
-  displayedColumns: string[] = ["id", 'productName', 'category', 'date', 'freshness', "price", "comment"];
+  displayedColumns: string[] = ["id", 'productName', 'category', 'date', 'freshness', "price", "comment", "action"];
   dataSource!: MatTableDataSource<FormUser[]>;
 
-    @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   ngOnInit(): void {
