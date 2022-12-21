@@ -17,6 +17,7 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatRadioModule} from '@angular/material/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TableInfoComponent } from './components/table-info/table-info.component';
 
 
 
@@ -24,7 +25,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     HeaderComponent,
-    DialogComponent
+    DialogComponent,
+    TableInfoComponent
   ],
   imports: [
     BrowserModule,
