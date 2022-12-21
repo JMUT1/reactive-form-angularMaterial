@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
-import {MatDialogRef} from "@angular/material/dialog"
+import {MatDialogRef, MAT_DIALOG_DATA} from "@angular/material/dialog"
+import { FormUser } from 'src/app/shared/form-interface';
 
 @Component({
   selector: 'app-dialog',
@@ -14,7 +15,9 @@ export class DialogComponent implements OnInit {
   productCategory = ["Fruits", "Vegtables", "Electornics"]
   productForm !: FormGroup
 
-  constructor(private formBuilder : FormBuilder, private api : ApiService, private dialogRef : MatDialogRef<DialogComponent>) { }
+  constructor(private formBuilder : FormBuilder, private api : ApiService,
+    @Inject(MAT_DIALOG_DATA) public editData: FormUser,
+    private dialogRef : MatDialogRef<DialogComponent>) { }
 
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
@@ -26,6 +29,15 @@ export class DialogComponent implements OnInit {
       date: ["", Validators.required]
     })
 
+    if(this.editData){
+      this.productForm.controls["productName"].setValue(this.editData.productName)
+      this.productForm.controls["category"].setValue(this.editData.category)
+      this.productForm.controls["freshness"].setValue(this.editData.freshness)
+      this.productForm.controls["price"].setValue(this.editData.price)
+      this.productForm.controls["comment"].setValue(this.editData.comment)
+      this.productForm.controls["date"].setValue(this.editData.date)
+
+    }
   }
 
 addProduct(){

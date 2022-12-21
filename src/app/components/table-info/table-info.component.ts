@@ -4,6 +4,10 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {FormUser} from "../../shared/form-interface"
+import { DialogComponent } from '../dialog/dialog.component';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
+
 @Component({
   selector: 'app-table-info',
   templateUrl: './table-info.component.html',
@@ -11,7 +15,7 @@ import {FormUser} from "../../shared/form-interface"
 })
 export class TableInfoComponent implements OnInit {
 
-  constructor(private apiTable: ApiService) { }
+  constructor(private apiTable: ApiService, private dialog: MatDialog) { }
 
   displayedColumns: string[] = ["id", 'productName', 'category', 'date', 'freshness', "price", "comment", "action"];
   dataSource!: MatTableDataSource<FormUser[]>;
@@ -46,6 +50,13 @@ export class TableInfoComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
+editProduct(row: FormUser){
+ this.dialog.open(DialogComponent,{
+  width: "30%",
+  data: row
+ })
+}
 
 
 }
