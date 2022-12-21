@@ -3,7 +3,7 @@ import { ApiService } from 'src/app/services/api.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-
+import {FormUser} from "../../shared/form-interface"
 @Component({
   selector: 'app-table-info',
   templateUrl: './table-info.component.html',
@@ -14,7 +14,7 @@ export class TableInfoComponent implements OnInit {
   constructor(private apiTable: ApiService) { }
 
   displayedColumns: string[] = ["id", 'productName', 'category', 'date', 'freshness', "price", "comment"];
-  dataSource!: MatTableDataSource<any>;
+  dataSource!: MatTableDataSource<FormUser[]>;
 
     @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
