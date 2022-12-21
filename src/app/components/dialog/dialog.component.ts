@@ -23,8 +23,12 @@ export class DialogComponent implements OnInit {
       comment: ["", Validators.required],
       date: ["", Validators.required]
     })
-    // console.log(this.productForm.value);
 
   }
+
+addProduct(){
+  console.log(this.productForm.value);
+
+}
 
 }
