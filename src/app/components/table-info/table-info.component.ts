@@ -60,5 +60,16 @@ editProduct(row: FormUser){
  })
 }
 
+deleteProduct(id: number){
+  this.apiTable.deleteProduct(id)
+  .subscribe({
+    next: (res)=>{
+      alert("Product deleted!!")
+      this.getAllProducts()
+    }, error:()=>{
+      alert("Error while deleting the product")
+    }
+  })
+}
 
 }
