@@ -55,6 +55,8 @@ editProduct(row: FormUser){
  this.dialog.open(DialogComponent,{
   width: "30%",
   data: row
+ }).afterClosed().subscribe(value =>{
+  if(value === "Update") this.getAllProducts()
  })
 }
 

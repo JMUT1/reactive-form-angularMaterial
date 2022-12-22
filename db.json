@@ -4,7 +4,7 @@
       "productName": "Chema",
       "category": "Electornics",
       "freshness": "Brand New",
-      "price": 25.44,
+      "price": 1000,
       "comment": "NEW!!!",
       "date": "2022-12-21T06:00:00.000Z",
       "id": 1
@@ -62,6 +62,24 @@
       "comment": "NEW!!!",
       "date": "2022-12-21T06:00:00.000Z",
       "id": 7
+    },
+    {
+      "productName": "New",
+      "category": "Electornics",
+      "freshness": "Brand New",
+      "price": 12,
+      "comment": "s",
+      "date": "2022-12-22T06:00:00.000Z",
+      "id": 8
+    },
+    {
+      "productName": "Nuevo Intneto",
+      "category": "Electornics",
+      "freshness": "Brand New",
+      "price": 11111,
+      "comment": "vqgrqegq",
+      "date": "2022-12-22T06:00:00.000Z",
+      "id": 9
     }
   ],
   "comments": [

@@ -18,6 +18,11 @@ export class HeaderComponent implements OnInit {
     openDialog() {
     this.dialog.open(DialogComponent, {
       width: "50%"
-    });
+    }).afterClosed().subscribe(value =>{
+      if(value == "save"){
+        // NOT ORTODOX, BUT IS WORKING
+        location.reload()
+      }
+    })
   }
 }
